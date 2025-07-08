@@ -85,3 +85,6 @@ $ ros2 run mycobot280 detect.py
 $ ros2 run rqt_image_view rqt_image_view
 ```
 you will get the following output
+
+![Screencastfrom2025-07-0814-35-32-ezgif com-speed](https://github.com/user-attachments/assets/db13b80d-23a4-4ce7-8ff2-bbac7f544cc9)
+
