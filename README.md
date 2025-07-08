@@ -33,12 +33,16 @@ $ ros2 launch mycobot280 display.launch.py
 ```
 ###### The command launches the robot in RViZ. You will see the output as follows
 
+![Screenshot from 2025-07-08 13-12-10](https://github.com/user-attachments/assets/60f3c26e-b1aa-4f38-8823-8dcda7d05675)
+
 
 #### 2. Launching the Robot in Gazebo
 ```
 $ ros2 launch mycobot280 gazebo.launch.py
 ```
 ###### The command launches the robot in Gazebo. You will see the output as follows
+
+
 
 #### 3. configuration of Robot in Moveit2Stack
 ```
