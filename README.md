@@ -60,7 +60,8 @@ In this section we will implement Forward Kinematics and Inversekinematics using
 ```
 $ ros2 run mycobot280 send_joint_angles_node
 ```
-This will perform the forward Kinematics by sending the joint_angles to moveit for Manipulation. you will get the following outpuy
+This will perform the forward Kinematics by sending the joint_angles to moveit for Manipulation. you will get the following output
+
 
 #### 2. Performing Inverse Kinematics. Launch the robot in gazebo and moveit Respectively by using the commands(Aleready Given)
 
@@ -68,6 +69,7 @@ This will perform the forward Kinematics by sending the joint_angles to moveit f
 $ ros2 run mycobot280 send_pose_node
 ```
 This will perform the Inverse Kinematics by sending end_effector pose to manipulate the Robotic arm. you will get the following output.
+![IK-ezgif com-speed](https://github.com/user-attachments/assets/62acf3cd-8aa5-4fc9-b74b-5d4988329f1e)
 
 
 ### 3. Performing Object Detection using YOLO
