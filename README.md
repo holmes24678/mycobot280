@@ -35,20 +35,21 @@ $ ros2 launch mycobot280 display.launch.py
 
 ![Screenshot from 2025-07-08 13-12-10](https://github.com/user-attachments/assets/60f3c26e-b1aa-4f38-8823-8dcda7d05675)
 
-
 #### 2. Launching the Robot in Gazebo
 ```
 $ ros2 launch mycobot280 gazebo.launch.py
 ```
 ###### The command launches the robot in Gazebo. You will see the output as follows
-
-
+![Screenshot from 2025-07-08 13-13-07](https://github.com/user-attachments/assets/5e6fed5b-5377-4eaa-a791-642ffb4df4ea)
 
 #### 3. configuration of Robot in Moveit2Stack
 ```
 $ ros2 launch mycobot280 moveit.launch.py
 ```
 ###### The command launches the robot in RViZ. You will see the output as follows
+
+![Screenshot from 2025-07-08 13-14-00](https://github.com/user-attachments/assets/dfe22343-89ea-4d8d-a8d7-de482283ff2c)
+
 
 ### 2. Implementing Forward and Inverse Kinematics
 In this section we will implement Forward Kinematics and Inversekinematics using ROS2 Nodes. Created two different nodes one will send joint_angles to perform Manipulation and another will send end_effector pose to perform Manipulation
