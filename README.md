@@ -49,6 +49,7 @@ $ ros2 launch mycobot280 moveit.launch.py
 ###### The command launches the robot in RViZ. You will see the output as follows
 
 ![Screenshot from 2025-07-08 13-14-00](https://github.com/user-attachments/assets/dfe22343-89ea-4d8d-a8d7-de482283ff2c)
+![Screencastfrom2025-07-0813-15-07-ezgif com-speed](https://github.com/user-attachments/assets/2599a9d1-e8fd-4dae-b573-94740eedc170)
 
 
 ### 2. Implementing Forward and Inverse Kinematics
