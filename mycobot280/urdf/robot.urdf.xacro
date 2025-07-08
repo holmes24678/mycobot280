@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mycobot280">
+
+  <xacro:include filename="$(find mycobot280)/urdf/robot.gazebo.xacro"/>
+  <xacro:include filename="$(find mycobot280)/urdf/robot.ros2_control.xacro"/>
+  <xacro:include filename="$(find mycobot280)/urdf/camera.gazebo.xacro"/>
+  
+  
+    <link name="world"></link>
+    <joint name="virtual_joint" type="fixed">
+        <parent link="world"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.597155713392048 0.177046269057962 0.492460531154189"
+        rpy="0 0 0" />
+      <mass
+        value="28.8315131648907" />
+      <inertia
+        ixx="3.66288429819612"
+        ixy="5.34809228731864E-05"
+        ixz="-5.04602605076265E-05"
+        iyy="6.08513922771432"
+        iyz="0.00012124727749975"
+        izz="3.66225912790203" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link1">
+    <inertial>
+      <origin
+        xyz="0.012700608827981 0.0958546152581273 -1.45325140810115E-11"
+        rpy="0 0 0" />
+      <mass
+        value="1.02219998549708" />
+      <inertia
+        ixx="0.00315571393423137"
+        ixy="-0.000708891379079964"
+        ixz="1.11853484374008E-12"
+        iyy="0.00119939313883489"
+        iyz="-2.7478833011102E-13"
+        izz="0.00353763323761046" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/Link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/Link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J1"
+    type="revolute">
+    <origin
+      xyz="0.21679 -0.50149 0.40633"
+      rpy="1.5708 0 -1.0372" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="6.28"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="Link_2">
+    <inertial>
+      <origin
+        xyz="-0.11106872895544 0.100000000020283 -6.19547191327285E-11"
+        rpy="0 0 0" />
+      <mass
+        value="1.5414487133758" />
+      <inertia
+        ixx="0.00997787485806034"
+        ixy="-6.86029331216018E-13"
+        ixz="6.49076582412422E-12"
+        iyy="0.00188553413438129"
+        iyz="-3.49583107958368E-12"
+        izz="0.0106308542322907" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/Link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/Link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J2"
+    type="revolute">
+    <origin
+      xyz="0.022144 0.15001 0"
+      rpy="3.5 0 -3.1416" />
+    <parent
+      link="Link1" />
+    <child
+      link="Link_2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="6.28"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="Link_3">
+    <inertial>
+      <origin
+        xyz="-0.00535599354300342 0.0999999999743382 -6.60289600773467E-11"
+        rpy="0 0 0" />
+      <mass
+        value="1.54144871457666" />
+      <inertia
+        ixx="0.00997787486640406"
+        ixy="2.17809067494263E-12"
+        ixz="6.85228956909256E-12"
+        iyy="0.00188553413619418"
+        iyz="-3.52715093596004E-12"
+        izz="0.0106308542401701" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/Link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/Link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J3"
+    type="revolute">
+    <origin
+      xyz="0 0.2 0"
+      rpy="3.11 0 3.1416" />
+    <parent
+      link="Link_2" />
+    <child
+      link="Link_3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.1"
+      upper="6.28"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="Link_4">
+    <inertial>
+      <origin
+        xyz="0.0200907550393342 0.115283429866356 -8.19361245518735E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.644009700451858" />
+      <inertia
+        ixx="0.000798882316064304"
+        ixy="-0.000265729984228485"
+        ixz="8.42664019074998E-13"
+        iyy="0.000798882317590405"
+        iyz="-1.35001810620296E-12"
+        izz="0.00108316109744404" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/Link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/Link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J4"
+    type="revolute">
+    <origin
+      xyz="-0.0075178 0.2 0"
+      rpy="3.1416 0.60251 1.5708" />
+    <parent
+      link="Link_3" />
+    <child
+      link="Link_4" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.1"
+      upper="6.28"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="Link_5">
+    <inertial>
+      <origin
+        xyz="3.74508736356027E-07 -0.0179815516058093 -0.115015418494217"
+        rpy="0 0 0" />
+      <mass
+        value="0.994215195816849" />
+      <inertia
+        ixx="0.00238118437786452"
+        ixy="-1.04588150718135E-08"
+        ixz="-9.8178415389367E-09"
+        iyy="0.00129650774015142"
+        iyz="-0.000189644796085368"
+        izz="0.00197040966521599" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/Link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/Link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J5"
+    type="revolute">
+    <origin
+      xyz="0.024376 0.13537 0"
+      rpy="1.5708 -3.50212 -1.5708" />
+    <parent
+      link="Link_4" />
+    <child
+      link="Link_5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.1"
+      upper="6.28"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="Link_6">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-16 0.00435780524768226 -2.22044604925031E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.14451326206513" />
+      <inertia
+        ixx="6.89175505799182E-05"
+        ixy="-6.37392292808861E-20"
+        ixz="-8.470329472543E-22"
+        iyy="0.000116631627264521"
+        iyz="-2.14299335655338E-19"
+        izz="6.89175505799182E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/Link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot280/meshes/Link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J6"
+    type="revolute">
+    <origin
+      xyz="0 -0.10771 -0.12562"
+      rpy="0 1.3641 3.1416" />
+    <parent
+      link="Link_5" />
+    <child
+      link="Link_6" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="6.28"
+      effort="10"
+      velocity="10" />
+  </joint>
+
+  <link name="camera_link">
+        <visual>
+          <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+          <geometry>
+            <mesh filename="package://mycobot280/urdf/r200.dae" scale="3 3 3"/>
+          </geometry>
+        </visual>
+        <collision>
+          <origin xyz="0.003 0.065 0.007" rpy="0 0 0"/>
+          <geometry>
+            <box size="0.012 0.132 0.020"/>
+          </geometry>
+        </collision>
+      </link>
+
+      <joint name="camera_mount_joint" type="fixed">
+        <parent link="Link_6"/>
+        <child link="camera_link"/>
+        <!-- Adjust these values to position the camera forward-facing above the gripper -->
+        <origin xyz="0.2 0.025 -0.025" rpy="0 0 1.57"/>
+      </joint>
+      <xacro:depth_cam/>
+</robot>

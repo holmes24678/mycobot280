@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>mycobot280</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="hsherlock366@gmail.com">robotics-lab</maintainer>
+  <license>TODO: License declaration</license>
+
+   <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Core dependencies -->
+  <depend>rclcpp</depend>
+  <depend>geometry_msgs</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>moveit_ros_planning_interface</depend>
+
+  <!-- Python support (optional for rclpy use) -->
+  <exec_depend>rclpy</exec_depend>
+  <build_depend>ament_cmake_python</build_depend>
+
+  <!-- Test dependencies -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <!-- Export -->
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
