@@ -62,6 +62,7 @@ $ ros2 run mycobot280 send_joint_angles_node
 ```
 This will perform the forward Kinematics by sending the joint_angles to moveit for Manipulation. you will get the following output
 
+![FK-ezgif com-speed](https://github.com/user-attachments/assets/3fa818bb-0708-45d0-bf97-6b84a4931dd9)
 
 #### 2. Performing Inverse Kinematics. Launch the robot in gazebo and moveit Respectively by using the commands(Aleready Given)
 
